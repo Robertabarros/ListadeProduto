@@ -22,7 +22,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Produto</h5>
-          <p class="card-text" id="prod1"></p>
+          <p class="card-text" id="item1"></p>
 
         </div>
       </div>
@@ -31,7 +31,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Produto</h5>
-          <p class="card-text" id="prod2"></p>
+          <p class="card-text" id="item2"></p>
         </div>
       </div>
     </div>
@@ -42,14 +42,13 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Produto</h5>
-          <p class="card-text" id="prod3"></p>
+          <p class="card-text" id="item3"></p>
         </div>
       </div>
     </div>
   </div>
-<br>
-
-<div class="input-group mb-3">
+  <br>
+  <div class="input-group mb-3">
     <input type="text" class="form-control" id="escolha" placeholder="Qual produto deseja?" aria-label="Recipient's username"
       aria-describedby="button-addon2">
     <div class="input-group-append">
@@ -57,23 +56,27 @@
     </div>
   </div>
 
-	<script>
+
+  <script>
     $.ajax({
       url: 'https://botpag.com.br/teste',
       dataType: 'Json',
       success: function (data) {
         console.log(data);
-        $("#prod1").append("Id: " + data[0].id);
-        $("#prod1").append("<br>" + "Nome: " + data[0].nome);
-        $("#prod1").append("<br>" + "Preço: " + data[0].preco);
+        $("#item1").append("Id: " + data[0].id);
+        $("#item1").append("<br>" + "Nome: " + data[0].nome);
+        $("#item1").append("<br>" + "Preço: " + data[0].preco);
 
-        $("#prod2").append("Id: " + data[1].id);
-        $("#prod2").append("<br>" + "Nome: " + data[1].nome);
-        $("#prod2").append("<br>" + "Preço: " + data[1].preco);
 
-        $("#prod3").append("Id: " + data[2].id);
-        $("#prod3").append("<br>" + "Nome: " + data[2].nome);
-        $("#prod3").append("<br>" + "Preço: " + data[2].preco);
+        $("#item2").append("Id: " + data[1].id);
+        $("#item2").append("<br>" + "Nome: " + data[1].nome);
+        $("#item2").append("<br>" + "Preço: " + data[1].preco);
+
+
+
+        $("#item3").append("Id: " + data[2].id);
+        $("#item3").append("<br>" + "Nome: " + data[2].nome);
+        $("#item3").append("<br>" + "Preço: " + data[2].preco);
 
         $("#buttonOk").click(function () {
           if (($("#escolha").val() == data[0].id) | ($("#escolha").val() == data[1].id)
@@ -98,4 +101,3 @@
     );
 
   </script>
-	
